@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>Resturant API Data</h1>
+
+
+        <p>
+                URLS: 'admin/' ,<br>
+                <br>
+                # Restaurant Creation and updation<br>
+                <br>
+                URLS: 'restaurant/'<br>
+                URLS: 'restaurant/<int:pk>/',<br>
+<br>
+                # Order Creation and updation<br>
+                URLS: 'order/',<br>
+                URLS: 'order/<int:pk>/',<br>
+<br>
+                # Ticket Creation and updation<br>
+                URLS: 'ticket/',<br>
+                URLS: 'ticket/<int:pk>/',<br>
+<br>
+                # User creation and updation<br>
+                URLS: 'user/',<br>
+                URLS: 'user/<int:pk>/',<br>
+<br>
+                # Otp generation<br>
+                URLS: 'otp/',<br>
+<br>
+                # User checking using id<br>
+                URLS: 'user_check/',<br>
+<br>
+                # Authentication of the users<br>
+                URLS: 'auth/',<br>
+<br>
+                # For index page<br>
+                URLS: 'index/'<br>
+<br>
+                # Token checking the user<br>
+                URLS: 'token_check/',<br>
+<br>
+                # Checking order status<br>
+                URLS: 'orderstatus/',<br>
+                URLS: 'orderStatusAPI/',<br>
+<br>
+                # For order notification and websocket<br>
+                URLS: 'order_notification/',<br>
+<br>
+                # Checking the firebase conncetion<br>
+                URLS: 'check_firebase_connection/',<br>
+<br>
+                # Order history<br>
+                URLS: 'order_history/',<br>
+<br>
+                # Feedback page<br>
+                URLS: 'feedback/',<br>
+<br>
+                # Subscription of the user<br>
+                URLS: 'subscription/',<br>
+<br>
+                # restuarant checking<br>
+                URLS: 'restuarant_check/',<br>
+<br>
+                # FCM token and device registration<br>
+                URLS: 'device_registration/',<br>
+                URLS: 'device_registration/<int:pk>/',<br>
+                URLS: 'startsession/',<br>
+                URLS: 'sessioncheck/',<br>
+                URLS: 'logoutsession/',<br>
+                URLS: 'getsession/',<br>
+<br>
+                # Terms and condition<br>
+                URLS: 'terms/',<br>
+                URLS: 'policy/',<br>
+                URLS: 'faq/',<br>
+                URLS: 'restaurant/order-history/',<br>
+<br>
+                URLS: 'resturantoff/',<br>
+                URLS: 'resturantworking/',<br>
+
+
+
+        </p>
+
+        {% comment %} <p>Channel Name is {{channel_age}}</p>
+        <p>Channel Name is {{channel_name}}</p>
+        <p>Channel Name is {{channel_email}}</p>
+
+
+        <h1>{{ token_data }}</h1>
+
+        <h1 id="order-status"></h1>
+
+        {{ order }} {% endcomment %}
+        {% comment %} <script>
+
+            var socket = new WebSocket('ws://127.0.0.1:8000/ws/or/');
+
+            socket.onopen = function(){
+                console.log('Websocket connected....');
+            };
+            socket.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                console.log("Order ID:", data.order_id, "Order Status:", data.order_status);
+                var display = "order_id :" + data.order_id +" "+ "order_status: "+ data.order_status;
+                document.getElementById("order-status").innerHTML = display;
+            };
+
+            socket.onclose = function(event) {
+                console.log("WebSocket connection closed");
+            };
+
+        </script> {% endcomment %}
+    </body>
+</html>
